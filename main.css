@@ -1,0 +1,143 @@
+:root {
+    --background-color: #1b1b1b;
+    --text-color: #e0e0e0;
+    --header-background: #333;
+    --nav-background: #444;
+    --footer-background: #222;
+    --primary-color: #ff6363;
+    --secondary-color: #f5a623;
+    --font-family: 'Roboto', sans-serif;
+    --transition-duration: 0.3s;
+    --container-max-width: 1200px;
+    --container-padding: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    opacity: 0;
+    animation: fadeInAnimation 2s ease forwards;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+header, main, footer {
+    opacity: 0;
+}
+
+.fade-in {
+    animation: fadeInAnimation var(--transition-duration) ease forwards;
+}
+
+@keyframes fadeInAnimation {
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    background-color: var(--header-background);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.navbar {
+    background-color: var(--nav-background);
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color var(--transition-duration);
+}
+
+.navbar ul li a:hover {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.profile-img img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid var(--primary-color);
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+}
+
+.main-content .card {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-duration);
+}
+
+.main-content .card:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    background-color: var(--footer-background);
+    padding: 20px 0;
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 20px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+}
+#dov{
+display: flex;
+justify-content: center;    
+
+}
